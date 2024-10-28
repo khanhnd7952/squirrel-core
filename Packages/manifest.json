@@ -2,6 +2,7 @@
   "dependencies": {
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.5",
     "com.kelsey.zego": "https://gitlab.ikameglobal.com/khanhnd/unity-foundation.git?path=Assets/Zego",
+    "com.unity.ide.rider": "3.0.34",
     "com.unity.purchasing": "4.12.2",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",

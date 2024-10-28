@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace Squirrel.Common.Editor
 {
+#if UNITY_EDITOR
+
     public static class ResizeImages
     {
         private static string basePath => Application.dataPath.Replace("Assets", "");
@@ -138,4 +140,5 @@ namespace Squirrel.Common.Editor
             System.IO.File.WriteAllBytes(imagePath, imageData);
         }
     }
+#endif
 }

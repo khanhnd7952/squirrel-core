@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Squirrel.Common.Editor
 {
+#if UNITY_EDITOR
     public static class FindReferencesInProject
     {
         private const string MenuItemText = "Assets/Find References In Project";
@@ -33,7 +34,7 @@ namespace Squirrel.Common.Editor
                     }
                     else
                     {
-                        referenceCache[dependency] = new List<string>(){ assetPath };
+                        referenceCache[dependency] = new List<string>() { assetPath };
                     }
                 }
             }
@@ -69,4 +70,6 @@ namespace Squirrel.Common.Editor
             return false;
         }
     }
+
+#endif
 }

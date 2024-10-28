@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Squirrel.Common.Editor
 {
+#if UNITY_EDITOR
     public static class FindMissingScriptsRecursively
     {
         [MenuItem("Squirrel/Tools/Remove Missing Scripts Recursively Visit Prefabs")]
@@ -64,4 +65,5 @@ namespace Squirrel.Common.Editor
             }
         }
     }
+#endif
 }
