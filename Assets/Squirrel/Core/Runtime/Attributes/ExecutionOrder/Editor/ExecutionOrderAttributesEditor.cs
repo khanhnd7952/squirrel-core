@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Squirrel.Attributes
 {
+#if UNITY_EDITOR
 	public static class ExecutionOrderAttributeEditor
 	{
 		static class Graph
@@ -361,4 +362,6 @@ namespace Squirrel.Attributes
 			UpdateExecutionOrder(orders);
 		}
 	}
+#endif
+	
 }
