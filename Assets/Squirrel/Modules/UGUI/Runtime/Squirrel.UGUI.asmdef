@@ -1,0 +1,29 @@
+{
+    "name": "Squirrel.UGUI",
+    "rootNamespace": "Squirrel.UGUI",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:f4987e703fed4be49ba4aaee10f21c3b",
+        "GUID:d861222cdd2b1854598fde05182ef248",
+        "GUID:f5cf187589ab5ef4ba1a26afe392bd38",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:31f4d258122def948a73201bb6f5003e",
+        "GUID:adac8d59ad7e8504f82d387cded797a7",
+        "GUID:b0a110e2f808b4d4d82f5694f91b251a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.demigiant.dotween",
+            "expression": "",
+            "define": "SQUIRREL_DOTWEEN"
+        }
+    ],
+    "noEngineReferences": false
+}

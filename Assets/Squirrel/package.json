@@ -1,0 +1,14 @@
+{
+  "displayName": "Squirrel",
+  "name": "com.squirrel.mydad",
+  "unity": "2022.3",
+  "description": "My usefull tool for unity mobile development",
+  "category": "Tool",
+  "keywords": [
+  ],
+  "version": "1.1.1",
+  "dependencies": {
+    "com.unity.ugui": "1.0.0",
+    "com.unity.modules.unitywebrequest": "1.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Squirrel.Extension",
+    "rootNamespace": "Squirrel.Extension",
+    "references": [
+        "GUID:d861222cdd2b1854598fde05182ef248"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
