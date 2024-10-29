@@ -35,6 +35,7 @@ namespace Squirrel.UGUI
             if (bannerHeight != null)
             {
                 bannerHeight.OnValueChanged += BannerHeightOnOnValueChanged;
+                BannerHeightOnOnValueChanged(bannerHeight.Value);
             }
         }
 
