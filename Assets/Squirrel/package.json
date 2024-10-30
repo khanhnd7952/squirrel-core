@@ -13,7 +13,8 @@
       "url": "https://package.openupm.com",
       "scopes": [
         "com.google.external-dependency-manager",
-        "com.coffee.ui-particle"
+        "com.coffee.ui-particle",
+        "com.marijnzwemmer.unity-toolbar-extender"
       ]
     }
   ],
@@ -21,6 +22,7 @@
     "com.unity.ugui": "1.0.0",
     "com.unity.modules.unitywebrequest": "1.0.0",
     "com.google.external-dependency-manager": "1.2.183",
-    "com.coffee.ui-particle": "5.0.0-preview.11"
+    "com.coffee.ui-particle": "5.0.0-preview.11",
+    "com.marijnzwemmer.unity-toolbar-extender": "1.4.2"
   }
 }
