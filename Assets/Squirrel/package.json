@@ -14,13 +14,8 @@
       "scopes": [
         "com.google.external-dependency-manager",
         "com.coffee.ui-particle",
-      ]
-    },
-    {
-      "name": "package.openupm.com",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.needle.compilation-visualizer"
+        "com.needle.compilation-visualizer",
+        "com.coffee.softmask-for-ugui"
       ]
     }
   ],
@@ -29,6 +24,7 @@
     "com.unity.modules.unitywebrequest": "1.0.0",
     "com.google.external-dependency-manager": "1.2.183",
     "com.coffee.ui-particle": "5.0.0-preview.11",
-    "com.needle.compilation-visualizer": "1.8.4"
+    "com.marijnzwemmer.unity-toolbar-extender": "1.4.2",
+    "com.coffee.softmask-for-ugui": "2.3.8"
   }
 }
