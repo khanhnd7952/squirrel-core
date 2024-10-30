@@ -7,17 +7,6 @@
   "keywords": [
   ],
   "version": "1.1.1",
-  "scopedRegistries": [
-    {
-      "name": "package.openupm.com",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.google.external-dependency-manager",
-        "com.coffee.ui-particle",
-        "com.coffee.softmask-for-ugui"
-      ]
-    }
-  ],
   "dependencies": {
     "com.unity.ugui": "1.0.0",
     "com.unity.modules.unitywebrequest": "1.0.0",
