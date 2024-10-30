@@ -2,7 +2,8 @@
     "name": "Squirrel.ScriptableExtension",
     "rootNamespace": "Squirrel.ScriptableExtension",
     "references": [
-        "GUID:b0a110e2f808b4d4d82f5694f91b251a"
+        "GUID:b0a110e2f808b4d4d82f5694f91b251a",
+        "GUID:ee6baafdecd94804a8714654c4bd097f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -11,6 +12,12 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.obvious.soap",
+            "expression": "",
+            "define": "KELSEY_SOAP"
+        }
+    ],
     "noEngineReferences": false
 }

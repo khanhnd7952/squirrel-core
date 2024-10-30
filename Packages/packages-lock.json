@@ -21,7 +21,14 @@
         "com.unity.ugui": "1.0.0",
         "com.unity.textmeshpro": "3.0.9"
       },
-      "hash": "e5d0e01be151dda14bf1fc0d467cc64976867bbd"
+      "hash": "a1e207e188a44b92241b680c567a19fe6fef780a"
+    },
+    "com.obvious.soap": {
+      "version": "https://gitlab.ikameglobal.com/khanhnd/package-holder.git?path=Assets/Obvious/Soap",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f8da9b00eceb3aced7164a3f812dca855c14fb8d"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",

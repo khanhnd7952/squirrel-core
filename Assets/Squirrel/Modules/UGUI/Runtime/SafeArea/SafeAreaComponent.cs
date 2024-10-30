@@ -1,6 +1,10 @@
 using System;
 using Kelsey;
-using Kelsey.Scriptable;
+
+#if KELSEY_SOAP
+using Obvious.Soap;
+#endif
+
 using UnityEngine;
 
 namespace Squirrel.UGUI
@@ -16,27 +20,31 @@ namespace Squirrel.UGUI
             Right = 1 << 3,
         }
 
-        [field: SerializeField, EnumFlags]
-        private EPadding Padding { get; set; } = (EPadding)Enum.Parse(typeof(EPadding), (-1).ToString());
-
+        [field: SerializeField, EnumFlags] private EPadding Padding { get; set; } = (EPadding)Enum.Parse(typeof(EPadding), (-1).ToString());
+#if KELSEY_SOAP
         [SerializeField] private FloatVariable bannerHeight;
+#endif
 
         void OnDestroy()
         {
+#if KELSEY_SOAP
             if (bannerHeight != null)
             {
                 bannerHeight.OnValueChanged -= BannerHeightOnOnValueChanged;
                 bannerHeight.Value = 0;
             }
+#endif
         }
 
         void Start()
         {
+#if KELSEY_SOAP
             if (bannerHeight != null)
             {
                 bannerHeight.OnValueChanged += BannerHeightOnOnValueChanged;
                 BannerHeightOnOnValueChanged(bannerHeight.Value);
             }
+#endif
         }
 
         private void BannerHeightOnOnValueChanged(float obj)
@@ -69,10 +77,13 @@ namespace Squirrel.UGUI
             if (Padding.HasFlag(EPadding.Bottom)) paddingBottom = safeArea.y;
             if (Padding.HasFlag(EPadding.Left)) paddingLeft = safeArea.x;
 
+#if KELSEY_SOAP
             if (bannerHeight != null)
             {
                 paddingBottom += bannerHeight.Value;
             }
+#endif
+
 
             RectT.sizeDelta = RectT.anchoredPosition = Vector3.zero;
             RectT.anchorMin = new Vector2(paddingLeft / width, paddingBottom / height);

@@ -1,4 +1,5 @@
-﻿using Kelsey.Scriptable;
+﻿#if KELSEY_SOAP
+using Obvious.Soap;
 using UnityEngine;
 
 namespace Squirrel.ScriptableExtension
@@ -15,3 +16,4 @@ namespace Squirrel.ScriptableExtension
         }
     }
 }
+#endif

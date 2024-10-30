@@ -9,7 +9,8 @@
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:31f4d258122def948a73201bb6f5003e",
         "GUID:adac8d59ad7e8504f82d387cded797a7",
-        "GUID:b0a110e2f808b4d4d82f5694f91b251a"
+        "GUID:b0a110e2f808b4d4d82f5694f91b251a",
+        "GUID:ee6baafdecd94804a8714654c4bd097f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -20,9 +21,9 @@
     "defineConstraints": [],
     "versionDefines": [
         {
-            "name": "com.demigiant.dotween",
+            "name": "com.obvious.soap",
             "expression": "",
-            "define": "SQUIRREL_DOTWEEN"
+            "define": "KELSEY_SOAP"
         }
     ],
     "noEngineReferences": false

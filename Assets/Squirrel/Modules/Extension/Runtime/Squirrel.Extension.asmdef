@@ -2,7 +2,8 @@
     "name": "Squirrel.Extension",
     "rootNamespace": "Squirrel.Extension",
     "references": [
-        "GUID:d861222cdd2b1854598fde05182ef248"
+        "GUID:d861222cdd2b1854598fde05182ef248",
+        "GUID:ee6baafdecd94804a8714654c4bd097f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
