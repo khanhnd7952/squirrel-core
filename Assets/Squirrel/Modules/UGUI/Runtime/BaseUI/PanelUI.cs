@@ -29,8 +29,8 @@ namespace Squirrel.UGUI
             panelGroup = transform.GetChild(0).gameObject;
             tmShow = transform.GetChild(1).GetChild(0).GetComponent<KTweenManager>();
             tmHide = transform.GetChild(1).GetChild(1).GetComponent<KTweenManager>();
-            tmShow.InitTween();
-            tmHide.InitTween();
+            tmShow.InitTween("show");
+            tmHide.InitTween("hide");
         }
 
         [Button]
@@ -110,6 +110,7 @@ namespace Squirrel.UGUI
 
         void DisablePanel()
         {
+            Debug.Log("DisablePanel");
             panelGroup.SetActive(false);
         }
 
