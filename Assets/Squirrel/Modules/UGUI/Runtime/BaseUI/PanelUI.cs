@@ -11,9 +11,6 @@ namespace Squirrel.UGUI
         [ReadOnly] [SerializeField] protected KTweenManager tmShow, tmHide;
         [ReadOnly] [ShowInInspector] public bool IsShow { get; private set; } = false;
 
-        const string SHOW_TWEEN_ID = "show";
-        const string HIDE_TWEEN_ID = "hide";
-
         bool clickPermission = true;
 
         protected virtual void OnValidate()
@@ -29,11 +26,11 @@ namespace Squirrel.UGUI
         [Button]
         protected void InitTween()
         {
-            panelGroup = transform.GetChild(0).GetChild(0).gameObject;
-            tmShow = new KTweenManager();
-            tmHide = new KTweenManager();
-            tmShow.InitTween(transform.GetChild(0).gameObject, SHOW_TWEEN_ID);
-            tmHide.InitTween(transform.GetChild(0).gameObject, HIDE_TWEEN_ID);
+            panelGroup = transform.GetChild(0).gameObject;
+            tmShow = transform.GetChild(1).GetChild(0).GetComponent<KTweenManager>();
+            tmHide = transform.GetChild(1).GetChild(1).GetComponent<KTweenManager>();
+            tmShow.InitTween();
+            tmHide.InitTween();
         }
 
         [Button]

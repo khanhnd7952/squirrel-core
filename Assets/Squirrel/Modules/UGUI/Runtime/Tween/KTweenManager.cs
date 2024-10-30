@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,29 +8,24 @@ using UnityEngine.Events;
 namespace Squirrel.UGUI
 {
     [Serializable]
-    public class KTweenManager
+    public class KTweenManager : MonoBehaviour
     {
-#if SQUIRREL_DOTWEEN
-        [SerializeField] private float test;
-#endif
-        [ReadOnly] [SerializeField] protected GameObject parent;
-        [ReadOnly] [SerializeField] protected List<DOTweenAnimation> tweens;
-        [ReadOnly] [SerializeField] protected DOTweenAnimation longestTween;
-        [ReadOnly] [SerializeField] protected string tweenId;
-        private bool _isPlaying = false;
+        DOTweenAnimation[] _tweens;
+        DOTweenAnimation _longestTween;
+        bool _isPlaying;
+        private bool _init;
 
-        public void InitTween(GameObject parent, string id)
+        public void InitTween()
         {
-            this.parent = parent;
-            tweenId = id;
-            DOTweenAnimation[] allTweens = this.parent.GetComponentsInChildren<DOTweenAnimation>(true);
+            if (_init) return;
+            _init = true;
 
-            tweens = new List<DOTweenAnimation>();
+            _tweens = GetComponents<DOTweenAnimation>();
 
             var longestShow = float.MinValue;
-            foreach (DOTweenAnimation tween in allTweens)
+            foreach (DOTweenAnimation tween in _tweens)
             {
-                if (tween.isActive && tween.duration > 0 && tween.id == tweenId)
+                if (tween.isActive && tween.duration > 0)
                 {
                     tween.autoGenerate = false;
                     tween.autoPlay = false;
@@ -44,19 +37,17 @@ namespace Squirrel.UGUI
                     if (tweenTime > longestShow)
                     {
                         longestShow = tweenTime;
-                        longestTween = tween;
+                        _longestTween = tween;
                     }
-
-                    tweens.Add(tween);
                 }
             }
 
-            if (longestTween != null)
+            if (_longestTween != null)
             {
-                longestTween.hasOnComplete = true;
-                longestTween.onComplete = new UnityEvent();
-                longestTween.onComplete.RemoveAllListeners();
-                longestTween.onComplete.AddListener(OnPlayComplete);
+                _longestTween.hasOnComplete = true;
+                _longestTween.onComplete = new UnityEvent();
+                _longestTween.onComplete.RemoveAllListeners();
+                _longestTween.onComplete.AddListener(OnPlayComplete);
             }
         }
 
@@ -67,7 +58,7 @@ namespace Squirrel.UGUI
 
         public async UniTask Play()
         {
-            if (tweens.IsNullOrEmpty())
+            if (_tweens.IsNullOrEmpty())
             {
                 return;
             }
@@ -76,11 +67,11 @@ namespace Squirrel.UGUI
 
             StopAllTween();
 
-            foreach (DOTweenAnimation doTweenAnimation in tweens)
+            foreach (DOTweenAnimation doTweenAnimation in _tweens)
             {
                 doTweenAnimation.CreateTween(false, false);
-                doTweenAnimation.DORestartById(tweenId);
-                doTweenAnimation.DOPlayById(tweenId);
+                doTweenAnimation.DORestart();
+                doTweenAnimation.DOPlay();
             }
 
             await UniTask.WaitUntil(() => !_isPlaying);
@@ -88,7 +79,7 @@ namespace Squirrel.UGUI
 
         public void StopAllTween()
         {
-            foreach (DOTweenAnimation doTweenAnimation in tweens)
+            foreach (DOTweenAnimation doTweenAnimation in _tweens)
             {
                 if (doTweenAnimation != null) continue;
                 doTweenAnimation.DOPause();
