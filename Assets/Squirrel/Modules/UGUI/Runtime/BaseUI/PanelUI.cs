@@ -110,7 +110,6 @@ namespace Squirrel.UGUI
 
         void DisablePanel()
         {
-            Debug.Log("DisablePanel");
             panelGroup.SetActive(false);
         }
 
