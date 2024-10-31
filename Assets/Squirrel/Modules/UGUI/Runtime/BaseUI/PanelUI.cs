@@ -103,17 +103,17 @@ namespace Squirrel.UGUI
             onHide = null;
         }
 
-        void EnablePanel()
+        public void EnablePanel()
         {
             panelGroup.SetActive(true);
         }
 
-        void DisablePanel()
+        public void DisablePanel()
         {
             panelGroup.SetActive(false);
         }
 
-        public void InternalClickClose()
+        public virtual void InternalClickClose()
         {
             HHide();
         }
