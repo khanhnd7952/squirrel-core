@@ -47,6 +47,8 @@ namespace Squirrel.Extension
             {
                 camera = Camera.main;
             }
+            
+            if(camera == null) return Vector3.zero;
 
             var canvasPosition = canvas.transform.InverseTransformPoint(canvasObject.position);
             RectTransform canvasRect = canvas.GetComponent<RectTransform>();
@@ -67,6 +69,8 @@ namespace Squirrel.Extension
             {
                 camera = Camera.main;
             }
+            
+            if(camera == null) return Vector2.zero;
 
             RectTransform canvasRect = canvas.GetComponent<RectTransform>();
             Vector2 viewportSize = new Vector2(
