@@ -1,22 +1,28 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace Squirrel.UGUI.SimpleButton
 {
-    public class KButton : MonoBehaviour, IPointerClickHandler
+    public class KButton : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private float clickDelay = 0.5f;
+        [SerializeField] private bool scale = true;
         [SerializeField] private bool playSound = true;
         [SerializeField] private bool playVibration = true;
 
+        const float MinScale = 0.9f;
+        const float ScaleDuration = 0.15f;
+        private Vector3 _originalScale = Vector3.one;
+        private bool _isScaling = false;
         float _lastTimeClick;
 
         protected virtual void OnClick()
         {
             onClick?.Invoke();
-            onClickSuccess?.Invoke();
+            onButtonSound?.Invoke();
 
             // if (playVibration) VibrationController.PlayVibrationClickBtn();
             // if (playSound) SoundController.PlaySoundClick();
@@ -27,6 +33,24 @@ namespace Squirrel.UGUI.SimpleButton
             if (Time.unscaledTime < _lastTimeClick + clickDelay) return;
             _lastTimeClick = Time.unscaledTime;
             OnClick();
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            if (!scale) return;
+            _isScaling = true;
+            transform.DOKill();
+            transform.DOScale(new Vector3(MinScale * _originalScale.x, MinScale * _originalScale.y, 1f), ScaleDuration);
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            if (_isScaling)
+            {
+                _isScaling = false;
+                transform.DOKill();
+                transform.DOScale(_originalScale, ScaleDuration);
+            }
         }
 
         public void RegisterOnClick(Action action)
@@ -41,6 +65,8 @@ namespace Squirrel.UGUI.SimpleButton
 
 
         [SerializeField] UnityEvent onClick = new UnityEvent();
-        public static Action onClickSuccess;
+
+        public static Action onButtonSound;
+        public static Action onButtonVibration;
     }
 }

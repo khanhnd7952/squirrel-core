@@ -9,7 +9,6 @@ namespace Squirrel.UGUI
     {
         [SerializeField] float minScale = 0.9f;
         float scaleDuration = 0.15f;
-
         private Vector3 originalScale = Vector3.one;
         private bool isScaling = false;
 
