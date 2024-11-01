@@ -22,10 +22,9 @@ namespace Squirrel.UGUI.SimpleButton
         protected virtual void OnClick()
         {
             onClick?.Invoke();
-            onButtonSound?.Invoke();
 
-            // if (playVibration) VibrationController.PlayVibrationClickBtn();
-            // if (playSound) SoundController.PlaySoundClick();
+             if (playVibration) onButtonVibration?.Invoke();
+             if (playSound) onButtonSound?.Invoke();
         }
 
         public void OnPointerClick(PointerEventData eventData)
