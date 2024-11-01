@@ -4,13 +4,13 @@ namespace Squirrel
 {
     public abstract class SingletonProtected<T> : MonoBehaviour where T : SingletonProtected<T>
     {
-        protected static T Instance { get; private set; }
+        protected static T gInstance { get; private set; }
 
         protected virtual void Awake()
         {
-            if (Instance == null)
+            if (gInstance == null)
             {
-                Instance = this as T;
+                gInstance = this as T;
             }
             else Destroy(gameObject);
         }
