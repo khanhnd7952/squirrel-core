@@ -24,8 +24,8 @@ namespace Squirrel.UGUI.SimpleButton
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (Time.time < _lastTimeClick + clickDelay) return;
-            _lastTimeClick = Time.time;
+            if (Time.unscaledTime < _lastTimeClick + clickDelay) return;
+            _lastTimeClick = Time.unscaledTime;
             OnClick();
         }
 
