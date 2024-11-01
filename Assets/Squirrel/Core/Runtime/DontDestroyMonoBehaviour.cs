@@ -1,6 +1,6 @@
 ﻿namespace Squirrel
 {
-    public class DontDestroyMonoBehaviour<T> : Singleton<T> where T : DontDestroyMonoBehaviour<T>
+    public class DontDestroyMonoBehaviour<T> : SingletonProtected<T> where T : DontDestroyMonoBehaviour<T>
     {
         protected override void Awake()
         {
