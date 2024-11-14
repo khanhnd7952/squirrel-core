@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.5",
+    "com.jeffjadulco.guidregenerator": "https://github.com/jeffjadulco/unity-guid-regenerator.git",
     "com.kelsey.zego": "https://gitlab.ikameglobal.com/khanhnd/unity-foundation.git?path=Assets/Zego",
     "com.obvious.soap": "https://gitlab.ikameglobal.com/khanhnd/package-holder.git?path=Assets/Obvious/Soap",
     "com.unity.ide.rider": "3.0.34",

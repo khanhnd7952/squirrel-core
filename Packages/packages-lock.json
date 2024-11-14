@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "cdf88c6a6ac8c9b7e6e5d3c0a360a4af29641c24"
     },
+    "com.jeffjadulco.guidregenerator": {
+      "version": "https://github.com/jeffjadulco/unity-guid-regenerator.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7dbce4b94bd7f92c33de382439f662a0731a1db9"
+    },
     "com.kelsey.zego": {
       "version": "https://gitlab.ikameglobal.com/khanhnd/unity-foundation.git?path=Assets/Zego",
       "depth": 0,
