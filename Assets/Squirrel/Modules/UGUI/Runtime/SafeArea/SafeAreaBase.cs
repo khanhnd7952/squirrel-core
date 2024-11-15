@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if KELSEY_ZEGO
+
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -78,9 +80,16 @@ namespace Squirrel.UGUI
 
 #if UNITY_EDITOR
         private bool _isDirty;
-        private void LockRect() { RectT.hideFlags = HideFlags.NotEditable; }
 
-        private void UnlockRect() { RectT.hideFlags = HideFlags.None; }
+        private void LockRect()
+        {
+            RectT.hideFlags = HideFlags.NotEditable;
+        }
+
+        private void UnlockRect()
+        {
+            RectT.hideFlags = HideFlags.None;
+        }
 
         protected void OnEnable()
         {
@@ -170,3 +179,4 @@ namespace Squirrel.UGUI
 #endif
     }
 }
+#endif
