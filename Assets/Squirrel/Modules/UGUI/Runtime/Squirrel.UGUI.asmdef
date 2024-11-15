@@ -24,6 +24,11 @@
             "name": "com.obvious.soap",
             "expression": "",
             "define": "KELSEY_SOAP"
+        },
+        {
+            "name": "com.kelsey.zego",
+            "expression": "",
+            "define": "KELSEY_ZEGO"
         }
     ],
     "noEngineReferences": false
