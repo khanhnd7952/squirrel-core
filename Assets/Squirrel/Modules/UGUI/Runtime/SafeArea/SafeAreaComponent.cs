@@ -1,8 +1,6 @@
-using System;
-
 #if KELSEY_ZEGO
+using System;
 using Kelsey;
-#endif
 
 #if KELSEY_SOAP
 using Obvious.Soap;
@@ -14,7 +12,6 @@ namespace Squirrel.UGUI
 {
     public sealed class SafeAreaComponent : SafeAreaBase
     {
-#if KELSEY_ZEGO
         [Flags]
         public enum EPadding
         {
@@ -93,6 +90,6 @@ namespace Squirrel.UGUI
             RectT.anchorMin = new Vector2(paddingLeft / width, paddingBottom / height);
             RectT.anchorMax = new Vector2((width - paddingRight) / width, (height - paddingTop) / height);
         }
-#endif
     }
 }
+#endif

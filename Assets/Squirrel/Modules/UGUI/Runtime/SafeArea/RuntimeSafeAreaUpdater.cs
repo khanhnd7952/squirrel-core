@@ -1,4 +1,5 @@
-﻿using Kelsey;
+﻿#if KELSEY_ZEGO
+using Kelsey;
 using UnityEngine;
 
 namespace Squirrel.UGUI
@@ -21,3 +22,4 @@ namespace Squirrel.UGUI
         }
     }
 }
+#endif

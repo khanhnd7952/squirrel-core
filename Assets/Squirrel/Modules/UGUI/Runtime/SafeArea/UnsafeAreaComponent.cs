@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if KELSEY_ZEGO
+using System;
 using Kelsey;
 using UnityEngine;
 
@@ -52,3 +53,5 @@ namespace Squirrel.UGUI
         }
     }
 }
+
+#endif
