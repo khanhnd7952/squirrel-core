@@ -6,7 +6,7 @@
   "category": "Tool",
   "keywords": [
   ],
-  "version": "1.1.2",
+  "version": "1.2.0",
   "dependencies": {
     "com.unity.ugui": "1.0.0",
     "com.unity.modules.unitywebrequest": "1.0.0"
